@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Analysis Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="result-dashboard">
+
+    <div class="header">
+        <h1>
+            <i class="fas fa-robot"></i>
+            AI ANALYSIS COMPLETE
+        </h1>
+    </div>
+
+    <div class="score-section">
+
+        <div class="circle">
+
+            <div class="inner">
+                {{ score }}%
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="box">
+            <i class="fas fa-chart-line"></i>
+            <h3>Performance</h3>
+            <h2>{{ score }}%</h2>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-award"></i>
+            <h3>Grade</h3>
+            <h2>{{ grade }}</h2>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-check-circle"></i>
+            <h3>Status</h3>
+            <h2>{{ status }}</h2>
+        </div>
+
+    </div>
+
+    <div class="recommendation-card">
+
+        <h2>
+            <i class="fas fa-lightbulb"></i>
+            AI Recommendations
+        </h2>
+
+        <ul>
+
+        {% for item in recommendations %}
+            <li>{{ item }}</li>
+        {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <a href="/" class="analyze-btn">
+        <i class="fas fa-redo"></i>
+        Analyze Another Student
+    </a>
+
+    <div class="footer">
+
+        BCA AI/ML Major Project 2026<br>
+        Developed by Shivam Kumar
+
+    </div>
+
+</div>
+
+</body>
+</html>
